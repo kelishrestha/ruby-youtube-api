@@ -17,6 +17,9 @@ gem 'puma', '~> 3.0'
 # Google api client gem
 gem 'google-api-client', '0.9'
 
+# Convert to haml
+gem 'haml-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
