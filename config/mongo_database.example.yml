@@ -1,0 +1,22 @@
+defaults: &defaults
+  adapter: postgresql
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+
+development:
+  <<: *defaults
+  host: localhost
+  encoding: UTF8
+  username: postgres
+  password:
+  database: api_development
+
+test:
+  <<: *defaults
+  host: localhost
+  encoding: UTF8
+  username: postgres
+  password:
+  database: api_test

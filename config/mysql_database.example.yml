@@ -1,0 +1,26 @@
+# We use ERB here to switch DB drivers in case we're in JRuby
+<% jdbc = defined?(JRUBY_VERSION) ? 'jdbc' : '' %>  #' Fix vim highlighting
+<% socket = RUBY_PLATFORM.include?("darwin") ? '/tmp/mysql.sock' : '/var/run/mysqld/mysqld.sock' %>
+
+defaults: &defaults
+  adapter: <%= jdbc %>mysql2
+  database: <%= ENV['DB_NAME'] %>
+  pool: 25
+  username: <%= ENV['DB_USERNAME'] %>
+  socket: <%= socket %>
+  encoding: utf8
+
+development:
+  <<: *defaults
+  adapter: <%= jdbc %>mysql2
+  database: api_development
+  username: root
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  <<: *defaults
+  database: api_test
+  pool: 5
+  username: root
