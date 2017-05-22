@@ -11,7 +11,7 @@ development:
   encoding: UTF8
   username: postgres
   password:
-  database: api_development
+  database: youtube_api_development
 
 test:
   <<: *defaults
@@ -19,4 +19,4 @@ test:
   encoding: UTF8
   username: postgres
   password:
-  database: api_test
+  database: youtube_api_test
