@@ -14,8 +14,8 @@ gem 'puma', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Google api client gem
-gem 'google-api-client', '0.9'
+# # Google api client gem
+# gem 'google-api-client', '0.9'
 
 # Convert to haml
 gem 'haml-rails'
